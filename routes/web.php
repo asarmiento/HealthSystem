@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get("data-hospitals",[HospitalsController::class,'index']);
+Route::get("hospital/{id}/edit",[HospitalsController::class,'index']);
+Route::get("hospital-delete/{id}",[HospitalsController::class,'delete']);
+Route::post("hospital-store",[HospitalsController::class,'store']);
+Route::put("hospital-update/{id}",[HospitalsController::class,'update']);
