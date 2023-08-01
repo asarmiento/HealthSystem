@@ -45,6 +45,7 @@ class UsersController extends Controller
             $Users = new User();
             $Users->email_verifield_at = $data['email_verified_at'];
             $Users->datetime = $data['datetime'];
+            $Users->password = $data['passwod'];
             $Users->hashed = $data['hashed'];
             $Users->email = $data['email'];
             $Users->name = $data['name'];

@@ -43,6 +43,7 @@ class VehiclesController extends Controller
         $data = $request->all();
         if (Vehicle::where('plate',$data['plate'])->count() == 0) {
             $Vehicles = new Vehicle();
+            $Vehicles->plate = $data['plate'];
             $Vehicles->type = $data['type'];
             $Vehicles->full_type = $data['full_type'];
             $Vehicles->hospital_id = $data['hospital_id'];
