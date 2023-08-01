@@ -31,7 +31,7 @@ class VehiclesController extends Controller
     {
         $driver = Vehicle::find($id);
 
-        if ($Vehicles == null) {
+        if ($Vehicle == null) {
             return false;
         }
 
