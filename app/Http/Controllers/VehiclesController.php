@@ -43,9 +43,9 @@ class VehiclesController extends Controller
         $data = $request->all();
         if (Vehicle::where('card',$data['card'])->count() == 0) {
             $Vehicles = new Vehicle();
-            $Vehicles->name = $data['type'];
-            $Vehicles->last_name = $data['plate'];
-            $Vehicles->card = $data['full_type'];
+            $Vehicles->type = $data['type'];
+            $Vehicles->plate = $data['plate'];
+            $Vehicles->full_type = $data['full_type'];
             $Vehicles->phone = $data['phone'];
             $Vehicles->email = $data['email'];
             $Vehicles->hospital_id = $data['hospital_id'];
