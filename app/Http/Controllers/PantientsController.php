@@ -41,9 +41,8 @@ class PantientsController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        if (Patient::where('card',$data['card'])->count() == 0) {
+        if (Patient::where('name',$data['name'])->count() == 0) {
             $driver = new Patient();
-            $driver->name = $data['name'];
             $driver->last_name = $data['last_name'];
             $driver->cell = $data['cell'];
             $driver->phone = $data['phone'];

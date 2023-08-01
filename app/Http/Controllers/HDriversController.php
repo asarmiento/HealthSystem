@@ -45,7 +45,6 @@ class HDriversController extends Controller
             $HDriver = new HDriver();
             $HDriver->last_name = $data['last_name'];
             $HDriver->name = $data['name'];
-            $HDriver->card = $data['card'];
             $HDriver->phone = $data['phone'];
             $HDriver->email = $data['email'];
             $HDriver->hospital_id = $data['hospital_id'];
