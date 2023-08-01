@@ -41,13 +41,10 @@ class VehiclesController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        if (Vehicle::where('card',$data['card'])->count() == 0) {
+        if (Vehicle::where('plate',$data['plate'])->count() == 0) {
             $Vehicles = new Vehicle();
             $Vehicles->type = $data['type'];
-            $Vehicles->plate = $data['plate'];
             $Vehicles->full_type = $data['full_type'];
-            $Vehicles->phone = $data['phone'];
-            $Vehicles->email = $data['email'];
             $Vehicles->hospital_id = $data['hospital_id'];
             $Vehicles->save();
         }
