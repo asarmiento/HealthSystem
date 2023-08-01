@@ -42,14 +42,14 @@ class HDriversController extends Controller
     {
         $data = $request->all();
         if (HDriver::where('card',$data['card'])->count() == 0) {
-            $driver = new HDriver();
-            $driver->name = $data['name'];
-            $driver->last_name = $data['last_name'];
-            $driver->card = $data['card'];
-            $driver->phone = $data['phone'];
-            $driver->email = $data['email'];
-            $driver->hospital_id = $data['hospital_id'];
-            $driver->save();
+            $HDriver = new HDriver();
+            $HDriver->last_name = $data['last_name'];
+            $HDriver->name = $data['name'];
+            $HDriver->card = $data['card'];
+            $HDriver->phone = $data['phone'];
+            $HDriver->email = $data['email'];
+            $HDriver->hospital_id = $data['hospital_id'];
+            $HDriver->save();
         }
     }
 }

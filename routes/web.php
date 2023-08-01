@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\VehiclesController;
 
 Route::get("data-hospitals",[HospitalsController::class,'index']);
 Route::get("hospital/{id}/edit",[HospitalsController::class,'index']);
