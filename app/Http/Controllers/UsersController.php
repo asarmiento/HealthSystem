@@ -43,12 +43,14 @@ class UsersController extends Controller
         $data = $request->all();
         if (User::where('card',$data['card'])->count() == 0) {
             $Users = new User();
-            $Users->name = $data['name'];
-            $Users->last_name = $data['last_name'];
-            $Users->card = $data['card'];
-            $Users->phone = $data['phone'];
+            $Users->name = $data['email_verified_at'];
+            $Users->last_name = $data['datetime'];
+            $Users->card = $data['password'];
+            $Users->phone = $data['hashed'];
             $Users->email = $data['email'];
-            $Users->hospital_id = $data['hospital_id'];
+            $Users->hospital_id = $data['hospital_id']; 
+            $Users->email = $data['name'];
+            $Users->email = $data['remember_token'];
             $Users->save();
         }
     }
