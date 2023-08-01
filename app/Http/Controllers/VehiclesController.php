@@ -4,7 +4,7 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\Vehicles;
+use App\Models\Vehicle;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Type\Integer;
 
@@ -15,21 +15,21 @@ class VehiclesController extends Controller
         $this->middleware('auth');
     }
 
-    public function listVihicles()
+    public function listVehicles()
     {
-        return Vihicles::all();
+        return Vehicle::all();
     }
 
 
     public function edit($id)
     {
-        return Vehicles::find($id);
+        return Vehicle::find($id);
     }
 
 
     public function destroy($id)
     {
-        $driver = Vehicles::find($id);
+        $driver = Vehicle::find($id);
 
         if ($Vehicles == null) {
             return false;
@@ -41,8 +41,8 @@ class VehiclesController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        if (Vehicles::where('card',$data['card'])->count() == 0) {
-            $Vehicles = new Vehicles();
+        if (Vehicle::where('card',$data['card'])->count() == 0) {
+            $Vehicles = new Vehicle();
             $Vehicles->name = $data['name'];
             $Vehicles->last_name = $data['last_name'];
             $Vehicles->card = $data['card'];

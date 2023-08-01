@@ -4,7 +4,7 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\Users;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Type\Integer;
 
@@ -17,19 +17,19 @@ class UsersController extends Controller
 
     public function listUsers()
     {
-        return Users::all();
+        return User::all();
     }
 
 
     public function edit($id)
     {
-        return Users::find($id);
+        return User::find($id);
     }
 
 
     public function destroy($id)
     {
-        $Users = Users::find($id);
+        $Users = User::find($id);
 
         if ($Users == null) {
             return false;
@@ -41,8 +41,8 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        if (Users::where('card',$data['card'])->count() == 0) {
-            $Users = new Users();
+        if (User::where('card',$data['card'])->count() == 0) {
+            $Users = new User();
             $Users->name = $data['name'];
             $Users->last_name = $data['last_name'];
             $Users->card = $data['card'];
