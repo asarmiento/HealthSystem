@@ -41,12 +41,13 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        if (User::where('password',$data['password'])->count() == 0) {
+        if (User::where('password',$data['password'])->where('email',$data['email'])->count() == 0) {
             $Users = new User();
             $Users->email_verifield_at = $data['email_verified_at'];
             $Users->datetime = $data['datetime'];
             $Users->password = $data['passwod'];
             $Users->hashed = $data['hashed'];
+            $Users->card = $data['card'];
             $Users->email = $data['email'];
             $Users->name = $data['name'];
             $Users->remember_token = $data['remember_token'];
