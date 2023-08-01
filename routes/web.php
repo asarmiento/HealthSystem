@@ -20,10 +20,10 @@ Route::get('/', function () {
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\VehiclesController;
 
-use App\Http\Controllers\HDriversController
-use App\Http\Controllers\HospitalsController
-use App\Http\Controllers\UsersController
-use App\Http\Controllers\VehiclesController
+use App\Http\Controllers\HDriversController;
+use App\Http\Controllers\HospitalsController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\VehiclesController;
 use App\Http\Controllers\HTransfersController;
 use App\Http\Controllers\PantientsController;
 use App\Http\Controllers\HospitalsController;
@@ -36,7 +36,7 @@ Route::post("hospital-store",[HospitalsController::class,'store']);
 Route::put("hospital-update/{id}",[HospitalsController::class,'update']);
 
 Route::get("data-users",[UsersController::class,'index']);
-Route::get("users/{id}/edit",[UserController::class,'index']);
+Route::get("users/{id}/edit",[UsersController::class,'index']);
 Route::get("users-delete/{id}",[UsersController::class,'delete']);
 Route::post("users-store",[UsersController::class,'store']);
 Route::put("users-update/{id}",[UsersController::class,'update']);
