@@ -8,7 +8,7 @@ use App\Models\HTransfer;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Type\Integer;
 
-class HTransferController extends Controller
+class HTransfersController extends Controller
 {
     public function __construct()
     {

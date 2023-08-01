@@ -4,7 +4,7 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\Pantients;
+use App\Models\Patient;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Type\Integer;
 
@@ -17,19 +17,19 @@ class PantientsController extends Controller
 
     public function listPantients()
     {
-        return Pantients::all();
+        return Patient::all();
     }
 
 
     public function edit($id)
     {
-        return Pantients::find($id);
+        return Patient::find($id);
     }
 
 
     public function destroy($id)
     {
-        $driver = Pantients::find($id);
+        $driver = Patient::find($id);
 
         if ($driver == null) {
             return false;
@@ -41,8 +41,8 @@ class PantientsController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        if (Pantients::where('card',$data['card'])->count() == 0) {
-            $driver = new Pantients();
+        if (Patient::where('card',$data['card'])->count() == 0) {
+            $driver = new Patient();
             $driver->name = $data['name'];
             $driver->last_name = $data['last_name'];
             $driver->cell = $data['cell'];
