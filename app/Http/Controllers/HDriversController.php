@@ -41,7 +41,7 @@ class HDriversController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        if (HDriver::where('card',$data['card'])->count() == 0) {
+        if (HDriver::where('card',$data['card'])->where('name',$data['name'])->count() == 0) {
             $HDriver = new HDriver();
             $HDriver->last_name = $data['last_name'];
             $HDriver->name = $data['name'];

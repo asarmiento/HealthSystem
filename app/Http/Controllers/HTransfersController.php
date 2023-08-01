@@ -41,8 +41,8 @@ class HTransfersController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        if (HTransfer::where('patient_id',$data['patient_id'])->count() == 0) {
-            $driver = new HDriver();
+        if (HTransfer::where('patient_id',$data['patient_id']->where('date',$data['date'])->count() == 0) {
+            $driver = new HTransfer();
             $driver->date = $data['date'];
             $driver->origin = $data['origin'];
             $driver->destination = $data['destination'];
