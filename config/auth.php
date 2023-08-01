@@ -97,8 +97,9 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
-    ],
 
+    ],
+    'no_csrf' => array('login','register'),
     /*
     |--------------------------------------------------------------------------
     | Password Confirmation Timeout

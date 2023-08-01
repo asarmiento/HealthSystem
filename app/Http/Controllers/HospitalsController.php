@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Hospital;
+use Illuminate\Http\Request;
 
 class HospitalsController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware('auth');
+      //  $this->middleware('auth');
     }
 
     public function listsHospital()
