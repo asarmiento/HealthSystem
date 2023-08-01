@@ -22,8 +22,8 @@ use App\Http\Controllers\HDriversController
 use App\Http\Controllers\HospitalsController
 use App\Http\Controllers\UsersController
 use App\Http\Controllers\VehiclesController
-use App\Http\Controllers\HTransfersController
-use App\Http\Controllers\PantientsController
+use App\Http\Controllers\HTransfersController;
+use App\Http\Controllers\PantientsController;
 use App\Http\Controllers\HospitalsController;
 use App\Http\Controllers\HDriversController;
 
