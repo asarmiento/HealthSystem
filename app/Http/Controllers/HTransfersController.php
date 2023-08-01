@@ -48,6 +48,7 @@ class HTransfersController extends Controller
             $driver->destination = $data['destination'];
             $driver->stretcher = $data['stretcher'];
             $driver->companion = $data['companion'];
+            $driver->patient_id = $data['patient_id'];
             $driver->driver_id = $data['driver_id'];
             $driver->vehicle_id = $data['vehicle_id'];
             $driver->save();

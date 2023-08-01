@@ -45,6 +45,7 @@ class PantientsController extends Controller
             $driver = new Patient();
             $driver->last_name = $data['last_name'];
             $driver->cell = $data['cell'];
+            $driver->cell = $data['name'];
             $driver->phone = $data['phone'];
             $driver->email = $data['email'];
             $driver->hospital_id = $data['hospital_id'];
