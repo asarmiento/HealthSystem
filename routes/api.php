@@ -37,14 +37,14 @@ Route::get("hospital-delete/{id}",[HospitalsController::class,'delete']);
 Route::post("hospital-store",[HospitalsController::class,'store']);
 Route::put("hospital-update/{id}",[HospitalsController::class,'update']);
 
-Route::get("data-users",[UsersController::class,'index']);
-Route::get("users/{id}/edit",[UsersController::class,'index']);
+Route::get("data-users",[UsersController::class,'listUsers']);
+Route::get("users/{id}/edit",[UsersController::class,'edit']);
 Route::get("users-delete/{id}",[UsersController::class,'delete']);
 Route::post("users-store",[UsersController::class,'store']);
 Route::put("users-update/{id}",[UsersController::class,'update']);
 
-Route::get("data-vehicles",[VehiclesController::class,'index']);
-Route::get("vehicles/{id}/edit",[VehiclesController::class,'index']);
+Route::get("data-vehicles",[VehiclesController::class,'listVehicles']);
+Route::get("vehicles/{id}/edit",[VehiclesController::class,'edit']);
 Route::get("vehicles-delete/{id}",[VehiclesController::class,'delete']);
 Route::post("vehicles-store",[VehiclesController::class,'store']);
 Route::put("vehicles-update/{id}",[VehiclesController::class,'update']);
