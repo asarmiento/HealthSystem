@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,9 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 Route::post('/register', [RegisteredUserController::class, 'store'])
     ->middleware('guest')
     ->name('register');
+Route::post('/login', [LoginController::class, 'loginAPIWeb'])
+    ->middleware('guest')
+    ->name('login');
 
 
 use App\Http\Controllers\UsersController;
@@ -31,11 +35,11 @@ use App\Http\Controllers\HTransfersController;
 use App\Http\Controllers\PantientsController;
 use App\Http\Controllers\HDriversController;
 
-Route::get("data-hospitals",[HospitalsController::class,'listsHospital']);
-Route::get("hospital/{id}/edit",[HospitalsController::class,'index']);
-Route::get("hospital-delete/{id}",[HospitalsController::class,'delete']);
-Route::post("hospital-store",[HospitalsController::class,'store']);
-Route::put("hospital-update/{id}",[HospitalsController::class,'update']);
+Route::get("data-hospitals",[HospitalsController::class,'listsHospital']); // Lista de Hospitales
+Route::get("hospital/{id}/edit",[HospitalsController::class,'index']); // Editar hospitales
+Route::get("hospital-delete/{id}",[HospitalsController::class,'delete']); // eliminar hospitales
+Route::post("hospital-store",[HospitalsController::class,'store']); // guardar hospitales
+Route::put("hospital-update/{id}",[HospitalsController::class,'update']); // actualizar hospitales
 
 Route::get("data-users",[UsersController::class,'listUsers']);
 Route::get("users/{id}/edit",[UsersController::class,'edit']);
