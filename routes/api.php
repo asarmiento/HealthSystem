@@ -50,20 +50,20 @@ Route::post("vehicles-store",[VehiclesController::class,'store']);
 Route::put("vehicles-update/{id}",[VehiclesController::class,'update']);
 
 Route::get("data-h-drivers",[HDriversController::class,'listDrivers']);
-Route::get("h-drivers/{id}/edit",[HDriversController::class,'index']);
-Route::get("h-drivers-delete/{id}",[HDriversController::class,'delete']);
+Route::get("h-drivers/{id}/edit",[HDriversController::class,'edit']);
+Route::get("h-drivers-delete/{id}",[HDriversController::class,'destroy']);
 Route::post("h-drivers-store",[HDriversController::class,'store']);
 Route::put("h-drivers-update/{id}",[HDriversController::class,'update']);
 
-Route::get("data-h-transfers",[HTransfersController::class,'index']);
-Route::get("h-transfers/{id}/edit",[HTransfersController::class,'index']);
-Route::get("h-transfers-delete/{id}",[HTransfersController::class,'delete']);
+Route::get("data-h-transfers",[HTransfersController::class,'listHTransfer']);
+Route::get("h-transfers/{id}/edit",[HTransfersController::class,'edit']);
+Route::get("h-transfers-delete/{id}",[HTransfersController::class,'destroy']);
 Route::post("h-transfers-store",[HTransfersController::class,'store']);
 Route::put("h-transfers-update/{id}",[HTransfersController::class,'update']);
 
-Route::get("data-Pantients",[PantientsController::class,'index']);
-Route::get("Pantients/{id}/edit",[PantientsController::class,'index']);
-Route::get("Pantients-delete/{id}",[PantientsController::class,'delete']);
+Route::get("data-Pantients",[PantientsController::class,'inlistPantients']);
+Route::get("Pantients/{id}/edit",[PantientsController::class,'edit']);
+Route::get("Pantients-delete/{id}",[PantientsController::class,'destroy']);
 Route::post("Pantients-store",[PantientsController::class,'store']);
 Route::put("Pantients-update/{id}",[PantientsController::class,'update']);
 
