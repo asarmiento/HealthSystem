@@ -49,21 +49,21 @@ Route::get("vehicles-delete/{id}",[VehiclesController::class,'delete']);
 Route::post("vehicles-store",[VehiclesController::class,'store']);
 Route::put("vehicles-update/{id}",[VehiclesController::class,'update']);
 
-Route::get("data-h_drivers",[HDriversController::class,'listDrivers']);
-Route::get("h_drivers/{id}/edit",[HDriversController::class,'index']);
-Route::get("h_drivers-delete/{id}",[HDriversController::class,'delete']);
-Route::post("h_drivers-store",[HDriversController::class,'store']);
-Route::put("h_drivers-update/{id}",[HDriversController::class,'update']);
+Route::get("data-h-drivers",[HDriversController::class,'listDrivers']);
+Route::get("h-drivers/{id}/edit",[HDriversController::class,'index']);
+Route::get("h-drivers-delete/{id}",[HDriversController::class,'delete']);
+Route::post("h-drivers-store",[HDriversController::class,'store']);
+Route::put("h-drivers-update/{id}",[HDriversController::class,'update']);
 
-Route::get("data-h_drivers",[HTransfersController::class,'index']);
-Route::get("h_drivers/{id}/edit",[HTransfersController::class,'index']);
-Route::get("h_drivers-delete/{id}",[HTransfersController::class,'delete']);
-Route::post("h_drivers-store",[HTransfersController::class,'store']);
-Route::put("h_drivers-update/{id}",[HTransfersController::class,'update']);
+Route::get("data-h-drivers",[HTransfersController::class,'index']);
+Route::get("h-drivers/{id}/edit",[HTransfersController::class,'index']);
+Route::get("h-drivers-delete/{id}",[HTransfersController::class,'delete']);
+Route::post("h-drivers-store",[HTransfersController::class,'store']);
+Route::put("h-drivers-update/{id}",[HTransfersController::class,'update']);
 
-Route::get("data-h_drivers",[PantientsController::class,'index']);
-Route::get("h_drivers/{id}/edit",[PantientsController::class,'index']);
-Route::get("h_drivers-delete/{id}",[PantientsController::class,'delete']);
-Route::post("h_drivers-store",[PantientsController::class,'store']);
-Route::put("h_drivers-update/{id}",[PantientsController::class,'update']);
+Route::get("data-h-drivers",[PantientsController::class,'index']);
+Route::get("h-drivers/{id}/edit",[PantientsController::class,'index']);
+Route::get("h-drivers-delete/{id}",[PantientsController::class,'delete']);
+Route::post("h-drivers-store",[PantientsController::class,'store']);
+Route::put("h-drivers-update/{id}",[PantientsController::class,'update']);
 
