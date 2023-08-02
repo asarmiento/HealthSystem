@@ -49,7 +49,7 @@ Route::get("vehicles-delete/{id}",[VehiclesController::class,'delete']);
 Route::post("vehicles-store",[VehiclesController::class,'store']);
 Route::put("vehicles-update/{id}",[VehiclesController::class,'update']);
 
-Route::get("data-h_drivers",[HDriversController::class,'index']);
+Route::get("data-h_drivers",[HDriversController::class,'listDrivers']);
 Route::get("h_drivers/{id}/edit",[HDriversController::class,'index']);
 Route::get("h_drivers-delete/{id}",[HDriversController::class,'delete']);
 Route::post("h_drivers-store",[HDriversController::class,'store']);
