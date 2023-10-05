@@ -6,18 +6,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Hospital;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class HospitalsController extends Controller
 {
 
     public function __construct()
     {
-      //  $this->middleware('auth');
+        //  $this->middleware('auth');
     }
 
     public function listsHospital()
     {
-        return Hospital::all();
+        try {
+            return Hospital::all();
+        } catch (\Exception $e) {
+            Log::error( $e->getMessage().'  -- '.$e->getTraceAsString());
+        }
     }
 
     public function edit($id)
@@ -29,7 +34,7 @@ class HospitalsController extends Controller
     {
         $hospital = Hospital::find($id);
 
-        if($hospital){
+        if ($hospital) {
             return $hospital->delete();
         }
 
@@ -41,7 +46,7 @@ class HospitalsController extends Controller
     {
         $data = $request->all();
 
-        if(Hospital::where('name',$data['name'])->count() == 0){
+        if (Hospital::where('name', $data['name'])->count() == 0) {
 
             $hospital = new Hospital();
             $hospital->name = $data['name'];
